@@ -1,1 +1,41 @@
+#include <stdio.h>
+#include <string.h>
 
+int main(){
+    char str1[50];
+    char str2[50];
+    int tamanho1 = 0;
+    int tamanho2 = 0;
+    int comparacao;
+
+    printf("Insira a primeira string: ");
+    fgets(str1, sizeof(str1), stdin);
+    printf("Insira a segunda string: ");
+    fgets(str2, sizeof(str2), stdin);
+
+    tamanho1 = strlen(str1);
+    tamanho2 = strlen(str2);
+    str1[tamanho1 - 1] = '\0';
+    str2[tamanho2 - 1] = '\0';
+
+    printf("String 1: %s\n", str1);
+    printf("String 2: %s\n", str2);
+    printf("Tamanho da string 1: %d caracteres\n", tamanho1-1);
+    printf("Tamanho da string 2: %d caracteres\n", tamanho2-1);
+
+    if(tamanho1 != tamanho2){
+        printf("As duas strings são de tamanhos diferentes.\n");
+    } else{
+        printf("As duas strings tem o mesmo tamanho.\n");
+    }
+
+    comparacao = strcmp(str1, str2);
+    if(comparacao == 0){
+        printf("As duas strings possuem o mesmo conteúdo.\n");
+    } else{
+        printf("As duas strings possuem conteúdos diferentes.\n");
+    }
+
+    return 0;
+
+}
