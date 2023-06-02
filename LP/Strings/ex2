@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(){
+    char nome[20];
+    char nomeContrario[20];
+    int contador1, contador2, i = 0;
+
+    printf("Digite seu nome (podem ser letras maiúsculas ou minúsculas): ");
+    fgets(nome, sizeof(nome), stdin);
+    
+    while(nome[contador1] != '\0'){
+        contador1++;
+    }
+
+    contador2 = contador1 - 1;
+
+    for(int i = 0; i < contador1; i++){
+        putchar(toupper(nome[contador2]));
+        nomeContrario[i] = nome[contador2];
+        contador2--;
+    }
+    
+    nomeContrario[i] = '\0';
+    printf("%s", nomeContrario);
+}
