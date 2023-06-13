@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char string[50];
+    int espacos = 0;
+    int vogais = 0;
+    printf("Insira uma frase:");
+    fgets(string, sizeof(string), stdin);
+    int tamanho = strlen(string) - 1;
+
+    for(int i = 0; i < tamanho; i++){
+        if(string[i] == ' '){
+            espacos++;
+        }
+        if(string[i] == 'a' || string[i] == 'e' || string[i] == 'i' || 
+           string[i] == 'o' || string[i] == 'u'){
+            vogais++;
+        }
+    }
+    printf("Quantidade de espaços: %d\n", espacos);
+    printf("Quantida de vogais: %d\n", vogais);
+}
