@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    int telefoneNumeros[8];
+    int n = 0;
+
+    for(int i = 0; i < 8; i++){
+        printf("Insira o %dº dígito do telefone: ", i+1);
+        scanf("%d", &telefoneNumeros[i]);
+
+        if(telefoneNumeros[0] != 3){
+            printf("Por favor, insira 3 como primeiro dígito!");
+            return 0;
+        }
+        if((telefoneNumeros[i] < 0) || (telefoneNumeros[i] > 9)){
+            printf("Dígito inválido!");
+            return 0;
+        }
+    }
+
+
+    char telefone[9];
+
+    for(int i = 0; i < 4; i++){
+        n += sprintf(&telefone[n], "%d", telefoneNumeros[i]);
+
+        }
+
+    telefone[4] = '-';
+    n = 5;
+
+    for(int i = 4; i < 8; i++){
+        n += sprintf(&telefone[n], "%d", telefoneNumeros[i]);
+    }
+
+    printf("%s", telefone);
+}
